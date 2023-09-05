@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.shock {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: shock 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shock {
+    0% {
+        transform: scale(0.2);
+    }
+
+    50% {
+        transform: scale(0.5);
+    } 
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+body {
+    background: linear-gradient(to right, #060692, #000018)  ;
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s linear infinite alternate;
+    color: #fff;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px; 
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0 auto;  
+}
+
+.perfil img {
+    margin-top: 8rem;
+    border-radius: 100%;
+    max-width: 100%;  
+    height: auto;  
+    margin-bottom: 1rem;
+}
+
+ 
+.perfil h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+}
+
+ 
+.links-container a {
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;  
+    padding: 0.5rem;  
+    border-radius: 4px;  
+    margin: 0.4rem;
+    text-align: center;
+    width: 100%; 
+    transition: background-color 0.3s ease;  
+}
+
+.links-container p {
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 0.6;
+    transform: translateZ(20px);  
+    transition: transform 0.3s ease; 
+}
+
+ 
+
+.links-container a:hover {
+    background-color: #000;
+    color: #fff;
+}
