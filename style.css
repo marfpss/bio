@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
+:root {
+    --background-color-light: #fff;
+    --text-color-light: #000;
+    --link-color-light: #000;
+    --link-hover-background-light: #000;
+    --link-hover-color-light: #fff;
+    --box-shadow-light: 0 0 5px black, 0 0 25px black, 0 0 50px black, 0 0 100px black, 0 0 200px black;
+    --background-color-dark: #222;
+    --text-color-dark: #fff;
+    --link-color-dark: #fff;
+    --link-hover-background-dark: #fff;
+    --link-hover-color-dark: #000;
+    --box-shadow-dark: 0 0 5px white, 0 0 25px white, 0 0 50px white, 0 0 100px white, 0 0 200px white;
+    --moon-icon-color-dark: #fff;  
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +27,55 @@
 html {
     overflow: hidden;
 }
- 
+
 body {
-    background: #fff;
+    background: var(--background-color-light);
+    color: var(--text-color-light);
 }
+
+.links-container a {
+    color: var(--link-color-light);
+    background-color: var(--background-color-light);
+}
+
+.links-container a:hover {
+    background-color: var(--link-hover-background-light);
+    color: var(--link-hover-color-light);
+    box-shadow: var(--box-shadow-light);
+}
+
+html[data-theme='dark'] {
+    --background-color-light: #222;
+    --text-color-light: #fff;
+    --link-color-light: #fff;
+    --link-hover-background-light: #fff;
+    --link-hover-color-light: #000;
+    --box-shadow-light: 0 0 5px white, 0 0 25px white, 0 0 50px white, 0 0 100px white, 0 0 200px white;
+    
+    body {
+        background: var(--background-color-dark);
+        color: var(--text-color-dark);
+    }
+
+    .links-container a {
+        color: var(--link-color-dark);
+        background-color: var(--background-color-dark);
+    }
+
+    .links-container a:hover {
+        background-color: var(--link-hover-background-dark);
+        color: var(--link-hover-color-dark);
+        box-shadow: var(--box-shadow-dark);
+    }
+
+    #theme-icon.fa-moon {
+        color: var(--moon-icon-color-dark);
+    }
+    .moon-icon {
+        color: white;  
+    }
+}
+
 
 .background {
     position: absolute;
@@ -24,8 +86,8 @@ body {
     height: 100%;
     background: url('cat.png') no-repeat;
     animation: catAnimation 20s linear infinite;
-    background-size: 100px; 
-    z-index: -1; 
+    background-size: 100px;
+    z-index: -1;
 }
 
 @keyframes catAnimation {
@@ -51,8 +113,6 @@ body {
     }
 }
 
-
-
 .links-container {
     height: 100vh;
     display: flex;
@@ -61,11 +121,11 @@ body {
     justify-content: center;
     border-radius: 4px;
     padding: 1rem;
-    margin: 0 auto;  
+    margin: 0 auto;
     max-width: 400px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255,255,255, 0)) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)) !important;
     backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(400px);; 
+    -webkit-backdrop-filter: blur(400px);
     z-index: 999;
 }
 
@@ -76,16 +136,14 @@ body {
     height: auto;
 }
 
-.perfil  img:hover {box-shadow: 0 0 5px black,
-    0 0 25px black, 0 0 50px black,
-    0 0 100px black, 0 0 200px black;
+.perfil img:hover {
+    box-shadow: 0 0 5px black, 0 0 25px black, 0 0 50px black, 0 0 100px black, 0 0 200px black;
     border: solid black 0.1rem;
 }
 
-
-.ft-perfil img{
+.ft-perfil img {
     filter: grayscale(0%);
-    transition: 0.5 ease;
+    transition: 0.5s ease;
     cursor: pointer;
 }
 
@@ -93,21 +151,18 @@ body {
     transform: scale(1);
     filter: grayscale(100%);
 }
-    
 
 .perfil h1 {
     font-size: 2rem;
     text-align: center;
-    color: #000000;
+    color: var(--text-color-light);
     font-weight: 900;
 }
 
-
-
 .links-container a {
     text-decoration: none;
-    color: #000;
-    background-color: #fff;
+    color: var(--link-color-light);
+    background-color: var(--background-color-light);
     padding: 0.5rem;
     border-radius: 4px;
     margin: 0.4rem;
@@ -115,17 +170,13 @@ body {
     width: 100%;
     transition: background-color 0.3s ease;
     border: solid black 0.1rem;
-    transition: all 0.5 ease;
+    transition: all 0.5s ease;
 }
 
-
 .links-container a:hover {
-    background-color: #000;
-    color: #fff;
-    box-shadow: 0 0 5px black,
-        0 0 25px black, 0 0 50px black,
-        0 0 100px black, 0 0 200px black;
-        
+    background-color: var(--link-hover-background-light);
+    color: var(--link-hover-color-light);
+    box-shadow: var(--box-shadow-light);
 }
 
 .links-container a:active {
@@ -133,7 +184,7 @@ body {
 }
 
 .links-container p {
-    color: #000000;
+    color: var(--text-color-light);
     font-size: 1rem;
 }
 
@@ -144,10 +195,9 @@ body {
     font-size: 1rem;
 }
 
-
 @media screen and (max-width: 768px) {
     .perfil img {
-        max-width: 150px;  
+        max-width: 150px;
     }
 
     .perfil h1 {
